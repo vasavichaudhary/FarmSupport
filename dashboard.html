@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmSense Dashboard</title>
+</head>
+<body>
+  <h1>🌱 Welcome to FarmSense</h1>
+  <p>Enter your farm location to get started.</p>
+  <input id="location" placeholder="Enter city or village">
+  <button onclick="showLocation()">Continue</button>
+  <p id="result"></p>
+
+  <script>
+    function showLocation() {
+      const place = document.getElementById('location').value.trim();
+      document.getElementById('result').textContent =
+        place ? 'Farm location: ' + place : 'Please enter your location.';
+    }
+  </script>
+</body>
+</html>
