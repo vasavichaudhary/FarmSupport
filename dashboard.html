@@ -598,10 +598,56 @@ header p {
   box-shadow: 0 10px 0 #164d30,
               0 18px 30px rgba(0, 0, 0, 0.3);
 }
-/* 3D farm design test */
+/* Simple immersive farm landscape */
 .farm-hero {
-  background: limegreen !important;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 35, 23, 0.15),
+      rgba(8, 35, 23, 0.45)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85")
+    center center / cover no-repeat !important;
 }
+
+.farm-nav,
+.farm-content,
+.farm-features {
+  position: relative;
+  z-index: 1;
+}
+
+.farm-content {
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+.farm-feature {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 15px 30px rgba(0, 25, 12, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.farm-feature:hover {
+  transform: translateY(-6px);
+}
+
+.farm-start {
+  box-shadow: 0 6px 0 #164d30,
+              0 12px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.farm-start:hover {
+  transform: translateY(-4px);
+}
+
 
 </style>
   <main id ="farm-dashboard">
