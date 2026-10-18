@@ -9,10 +9,73 @@
 </head>
 
 <body>
+<section class="farm-hero" id="farm-home">
+
+  <nav class="farm-nav">
+    <div class="farm-logo">🌿 Farm<span>Sense</span></div>
+
+    <div class="farm-links">
+      <a href="#farm-home">Home</a>
+      <a href="#farm-dashboard">Weather</a>
+      <a href="#farm-dashboard">Crop Advice</a>
+    </div>
+  </nav>
+
+  <div class="farm-content">
+    <div class="farm-tag">
+      SMART FARMING · BETTER HARVESTS
+    </div>
+
+    <h1>
+      Farm<span>Sense</span>
+    </h1>
+
+    <p>
+      Grow smarter. Farm better.
+      Discover real-time weather insights
+      and smart crop advice for a healthier,
+      more productive farm.
+    </p>
+
+    <a href="#farm-dashboard" class="farm-start">
+      🌱 Start Exploring &nbsp; →
+    </a>
+  </div>
+
+  <div class="farm-features">
+
+    <div class="farm-feature">
+      <div class="farm-icon">☀️</div>
+      <h3>Weather Updates</h3>
+      <p>Stay prepared with weather information.</p>
+    </div>
+
+    <div class="farm-feature">
+      <div class="farm-icon">🌱</div>
+      <h3>Crop Advice</h3>
+      <p>Discover suitable crops for your farm.</p>
+    </div>
+
+    <div class="farm-feature">
+      <div class="farm-icon">📍</div>
+      <h3>Location Search</h3>
+      <p>Explore conditions in your area.</p>
+    </div>
+
+    <div class="farm-feature">
+      <div class="farm-icon">🌾</div>
+      <h3>Farming Tips</h3>
+      <p>Make better everyday farming decisions.</p>
+    </div>
+
+  </div>
+</section>
   <header>
     <h1>🌱 FarmSense</h1>
     <p>Smarter Decisions for Every Farm</p>
   </header>
+
+
 <style>
   * {
     box-sizing: border-box;
@@ -282,6 +345,194 @@ header p {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+/* ===== FarmSense Advanced Welcome Screen ===== */
+.farm-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 7%;
+  color: white;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 30, 19, 0.88),
+      rgba(5, 30, 19, 0.48) 55%,
+      rgba(5, 30, 19, 0.12)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=90")
+    center center / cover no-repeat;
+}
+
+.farm-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: rgba(5, 30, 19, 0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+.farm-logo {
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.farm-logo span {
+  color: #a9ee86;
+}
+
+.farm-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
+
+.farm-nav a:hover {
+  color: #b9f69b;
+}
+
+.farm-content {
+  max-width: 720px;
+  padding-top: 90px;
+  animation: farmReveal 1s ease both;
+}
+
+.farm-tag {
+  color: #c7f5ad;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.farm-content h1 {
+  font-size: clamp(48px, 8vw, 92px);
+  line-height: 1.05;
+  margin: 18px 0;
+  letter-spacing: -3px;
+}
+
+.farm-content h1 span {
+  color: #a9ee86;
+}
+
+.farm-content p {
+  max-width: 550px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #edf7ee;
+}
+
+.farm-start {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 16px 28px;
+  background: #2f9e55;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 1px solid #b8f4a1;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.22);
+  transition: transform 0.25s, background 0.25s;
+}
+
+.farm-start:hover {
+  background: #207b3e;
+  transform: translateY(-4px);
+}
+
+.farm-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 65px;
+}
+
+.farm-feature {
+  padding: 22px 18px;
+  border: 1px solid rgba(208,255,195,0.32);
+  border-radius: 20px;
+  background: rgba(8, 35, 22, 0.65);
+  backdrop-filter: blur(12px);
+  transition: transform 0.25s, background 0.25s;
+}
+
+.farm-feature:hover {
+  transform: translateY(-6px);
+  background: rgba(23, 91, 48, 0.82);
+}
+
+.farm-feature .farm-icon {
+  font-size: 25px;
+}
+
+.farm-feature h3 {
+  font-size: 16px;
+  margin: 12px 0 6px;
+}
+
+.farm-feature p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  color: #d8e8d8;
+}
+
+@keyframes farmReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .farm-nav {
+    padding: 18px 5%;
+  }
+
+  .farm-nav .farm-links {
+    display: none;
+  }
+
+  .farm-hero {
+    padding: 30px 6%;
+    min-height: 100vh;
+  }
+
+  .farm-content h1 {
+    letter-spacing: -1px;
+  }
+
+  .farm-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 35px;
+  }
+
+  .farm-feature {
+    padding: 16px 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .farm-features {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
   <main>
     <section class="panel">
