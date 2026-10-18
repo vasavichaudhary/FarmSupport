@@ -532,7 +532,72 @@ header p {
     grid-template-columns: 1fr;
   }
 }
+/* Simple immersive 3D farm background */
+.farm-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 35, 23, 0.25),
+      rgba(8, 35, 23, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85")
+    center center / cover no-repeat;
+}
 
+/* Soft depth and sunlight */
+.farm-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 70% 25%,
+    rgba(255, 231, 163, 0.28),
+    transparent 35%
+  );
+}
+
+/* Keep the content above the landscape */
+.farm-nav,
+.farm-content,
+.farm-features {
+  position: relative;
+  z-index: 1;
+}
+
+/* Clean, floating feature cards */
+.farm-feature {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 15px 30px rgba(0, 25, 12, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.farm-feature:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 22px 38px rgba(0, 25, 12, 0.3);
+}
+
+/* Raised start button */
+.farm-start {
+  display: inline-block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 0 #164d30,
+              0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.farm-start:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 0 #164d30,
+              0 18px 30px rgba(0, 0, 0, 0.3);
+}
 </style>
   <main id ="farm-dashboard">
     <section class="panel">
